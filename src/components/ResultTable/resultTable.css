@@ -1,0 +1,17 @@
+.resultTable{
+ margin: 10px;
+}
+.summery-table {
+    width: 100%;
+    font-size: 12px;
+}
+.h1 {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+thead {
+    background-color: lightgray
+}

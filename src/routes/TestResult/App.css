@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  margin: 0 100px;
+}
+
+.App-title {
+  font-size: 1.5em;
+  color: #414141;
+  font-weight: 600;
+}
+
+.App-partioner {
+  display: flex;
+  align-items: stretch;
+}
