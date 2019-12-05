@@ -51,10 +51,12 @@ describe('Login Component', () => {
   })
 
   it('should navigate to summery screen', () => {
-    const wrapper = mount(<LoginPage store={store({'items': '1'})} />)
+    const wrapper = mount(<LoginPage store={store({ items: '1' })} />)
     wrapper.find('[data-qa="summery"]').simulate('click')
     const actions = wrapper.props().store.getActions()
-    const summeryAction = actions.find(action => action.type === 'GO_TO_SUMMERY')
+    const summeryAction = actions.find(
+      action => action.type === 'GO_TO_SUMMERY'
+    )
     expect(summeryAction.type).toEqual('GO_TO_SUMMERY')
   })
 
@@ -63,18 +65,17 @@ describe('Login Component', () => {
     const file = new Blob(['file contents'], { type: 'image/gif' }) // eslint-disable-line
     const dummyFileReader = { readAsDataURL: jest.fn(), onloadend: () => {} }
     window.FileReader = jest.fn(() => dummyFileReader)
-    wrapper.find('[data-qa="fileUpload"]').simulate(
-      'change',
-      {
-        target: { files: [file] }
-      }
-    )
+    wrapper.find('[data-qa="fileUpload"]').simulate('change', {
+      target: { files: [file] }
+    })
     // expect(wrapper.find('[data-qa="img"]').length).toEqual(1)
   })
 
   it('Should not render the uploaded image for invalid file', () => {
     const wrapper = mount(<LoginPage store={store()} />)
     wrapper.find('[data-qa="fileUpload"]').simulate('change')
-    expect(wrapper.find('[data-qa="error"]').text()).toEqual('UnSupported image')
+    expect(wrapper.find('[data-qa="error"]').text()).toEqual(
+      'UnSupported image'
+    )
   })
 })

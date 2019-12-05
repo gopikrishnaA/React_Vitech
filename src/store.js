@@ -16,14 +16,8 @@ const reduxRouterMiddleware = routerMiddleware(history)
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware()
 
-const middlewares = [
-  sagaMiddleware,
-  promiseMiddleware,
-  reduxRouterMiddleware
-]
-const enhancers = [
-  applyMiddleware(...middlewares)
-]
+const middlewares = [sagaMiddleware, promiseMiddleware, reduxRouterMiddleware]
+const enhancers = [applyMiddleware(...middlewares)]
 let composeEnhancers
 if (isProduction()) {
   composeEnhancers = compose
@@ -32,10 +26,7 @@ if (isProduction()) {
 }
 
 // mount it on the Store
-const store = createStore(
-  rootReducer,
-  composeEnhancers(...enhancers)
-)
+const store = createStore(rootReducer, composeEnhancers(...enhancers))
 
 // then run the saga
 sagaMiddleware.run(rootSaga)

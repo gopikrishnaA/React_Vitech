@@ -7,7 +7,7 @@ import Loading from '../index'
 // Create the mock store
 const mockStore = configureMockStore()
 
-const store = (flag) => {
+const store = flag => {
   const initialState = {
     loading: {
       loading: flag

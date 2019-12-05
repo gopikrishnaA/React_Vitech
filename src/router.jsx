@@ -11,8 +11,8 @@ export default () => {
     <Router history={history}>
       <div>
         <Loading />
-        <Route path='/' render={() => (<Redirect to='/testResults' />)} />
-        <Route path='/testResults' component={TestResult} />
+        <Route path="/" render={() => <Redirect to="/testResults" />} />
+        <Route path="/testResults" component={TestResult} />
       </div>
     </Router>
   )

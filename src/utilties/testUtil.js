@@ -1,5 +1,5 @@
 /* eslint-env jest */
-export const isValidReducer = (reducer) => {
+export const isValidReducer = reducer => {
   expect(typeof reducer).toEqual('function')
   expect(typeof reducer.toString).toEqual('function')
 }

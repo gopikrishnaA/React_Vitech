@@ -21,7 +21,9 @@ describe('Testing sampleAction Sagas', () => {
       id: '123',
       joke: 'test'
     }
-    expect(gen.next().value).toEqual(call(invokeService, { serviceUrl: 'https://icanhazdadjoke.com' }))
+    expect(gen.next().value).toEqual(
+      call(invokeService, { serviceUrl: 'https://icanhazdadjoke.com' })
+    )
     expect(gen.next(result).value).toEqual(put(onSucessAction(result)))
   })
 })

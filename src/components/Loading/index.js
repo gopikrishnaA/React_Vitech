@@ -4,14 +4,14 @@ import spinner from './spinner.gif'
 import './loading.css'
 
 export class Pure extends Component {
-  render () {
-    const {
-      isLoading
-    } = this.props
+  render() {
+    const { isLoading } = this.props
     return (
-      isLoading && <div className='loading-container' >
-        <img src={spinner} />
-      </div>
+      isLoading && (
+        <div className="loading-container">
+          <img src={spinner} />
+        </div>
+      )
     )
   }
 }

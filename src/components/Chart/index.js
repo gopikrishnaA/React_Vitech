@@ -1,8 +1,8 @@
 import React from 'react'
-import { Chart } from 'react-google-charts';
+import { Chart } from 'react-google-charts'
 import './chart.css'
 
-const Pure = (props) => {
+const Pure = props => {
   const {
     title,
     chartType,
@@ -26,8 +26,8 @@ const Pure = (props) => {
           }
         }}
       />
-    </div>)
+    </div>
+  )
 }
-
 
 export default Pure

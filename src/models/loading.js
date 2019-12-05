@@ -12,8 +12,7 @@ export const hasException = createAction('HAS_EXCEPTION')
  *
  */
 
-export const sagas = {
-}
+export const sagas = {}
 export const loadingSagaWatcher = createSagaWatcher(sagas)
 
 /** --------------------------------------------------
@@ -22,11 +21,11 @@ export const loadingSagaWatcher = createSagaWatcher(sagas)
  *
  */
 export const reducer = {
-  [showLoader]: (state) => ({
+  [showLoader]: state => ({
     ...state,
     loading: true
   }),
-  [hideLoader]: (state) => ({
+  [hideLoader]: state => ({
     ...state,
     loading: false
   }),
