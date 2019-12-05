@@ -85,7 +85,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "jest --config=jest.config.json --env=jsdom"
     }
   },
   "lint-staged": {
